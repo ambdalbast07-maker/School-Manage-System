@@ -1,0 +1,96 @@
+#ifndef TEACHER_H
+#define TEACHER_H
+#include<Person.h>
+#include <iostream>
+using namespace std;
+class Teacher:public Person
+{
+     private:
+         int teacherID;
+         string subjectSpecialization;
+         float salary;
+    public:
+        Teacher()
+{
+    name = "";
+    age = 0;
+    gender = "";
+    address = "";
+    phoneNumber = "";
+    email = "";
+    teacherID = 0;
+    subjectSpecialization = "";
+    salary = 0.0;
+}
+
+        void setTeacherID(int teacherID)
+        {
+            this-> teacherID=teacherID;
+        }
+        void setSubjectSpecialization(string subjectSpecialization)
+        {
+            this-> subjectSpecialization=subjectSpecialization;
+        }
+        void setSalary(float salary)
+        {
+            this-> salary=salary;
+        }
+        int getTeacherID()
+        {
+            return teacherID;
+        }
+        string getSubjectSpecialization()
+        {
+            return subjectSpecialization;
+        }
+        float getSalary()
+        {
+            return salary;
+        }
+        void print()
+        {
+            Person::print();
+            cout<<"The Teacher ID is:"<<teacherID<<endl;
+            cout<<"The subjectSpecialization is:"<<subjectSpecialization<<endl;
+            cout<<"The Salary is:"<<salary<<endl;
+        }
+         void information()
+        {
+            cout<<"Please Enter Your Name:"<<endl;
+            cin>>name;
+            cout<<"Please Enter Your Age:"<<endl;
+            cin>>age;
+            cout<<"Please Enter Your Gender:"<<endl;
+            cin>>gender;
+            cout<<"Please Enter Your Address:"<<endl;
+            cin>>address;
+            cout<<"Please Enter Your Phone Number:"<<endl;
+            cin>>phoneNumber;
+            cout<<"Please Enter Your Email:"<<endl;
+            cin>>email;
+            cout<<"Please Enter Your Teacher ID:"<<endl;
+            cin>>teacherID;
+            cout<<"Please Enter Your subjectSpecialization:"<<endl;
+            cin>>subjectSpecialization;
+            cout<<"Please Enter Your Salary:"<<endl;
+            cin>>salary;
+            cout<<"The Teacher Is Add In School Successfully"<<endl;
+        }
+        Teacher(string name,int age,string gender,string address,string phonenumber,string email,
+               int teacherID,string subjectSpecialization,float salary)
+               {
+                  this->name=name;
+                  this->age=age;
+                  this->gender=gender;
+                  this->address=address;
+                  this->phoneNumber=phonenumber;
+                  this->email=email;
+                  this-> teacherID=teacherID;
+                  this-> subjectSpecialization=subjectSpecialization;
+                  this-> salary=salary;
+               }
+
+        virtual ~Teacher() {}
+};
+
+#endif // TEACHER_H
