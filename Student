@@ -1,0 +1,97 @@
+#ifndef STUDENT_H
+#define STUDENT_H
+#include<Person.h>
+#include <iostream>
+using namespace std;
+class Student:public Person
+{
+   public:
+         Student()
+    {
+        this->studentID = 0;
+        this->gradLeve1 = "";
+        this->gpa = 0.0;
+
+        this->name = "";
+        this->age = 0;
+        this->gender = "";
+        this->address = "";
+        this->phoneNumber = "";
+        this->email = "";
+    }
+        void setStudentID(int studentID)
+        {
+            this->studentID=studentID;
+        }
+        void setGradLeve1(string gradLeve1)
+        {
+            this->gradLeve1=gradLeve1;
+        }
+        void setGpa(float gpa)
+        {
+            this->gpa=gpa;
+        }
+        int getStudentID()
+        {
+            return studentID;
+        }
+        string getGradleve1()
+        {
+            return gradLeve1;
+        }
+        float getGpa()
+        {
+            return gpa;
+        }
+        void print()
+        {
+            Person::print();
+            cout<<"the student ID is:"<<studentID<<endl;
+            cout<<"the grad Level is:"<< gradLeve1<<endl;
+            cout<<"the gpa is :"<<gpa<<endl;
+        }
+        Student(string name,int age,string gender,string address,string phoneNumber,string email,
+                int studentID,string gradLeve1,float gpa)
+        {
+            this->studentID=studentID;
+            this->gradLeve1=gradLeve1;
+            this->gpa=gpa;
+             this->name=name;
+            this->age=age;
+            this->gender=gender;
+            this->address=address;
+            this->phoneNumber=phoneNumber;
+            this->email=email;
+        }
+        void information()
+        {
+
+            cout<<"Please Enter Your Name:"<<endl;
+            cin>>name;
+            cout<<"Please Enter Your Age:"<<endl;
+            cin>>age;
+            cout<<"Please Enter Your Gender:"<<endl;
+            cin>>gender;
+            cout<<"Please Enter Your Address:"<<endl;
+            cin>>address;
+            cout<<"Please Enter Your Phone Number:"<<endl;
+            cin>>phoneNumber;
+            cout<<"Please Enter Your Email:"<<endl;
+            cin>>email;
+            cout<<"Please Enter Your Student ID:"<<endl;
+            cin>>studentID;
+            cout<<"Please Enter Your Grade Level:"<<endl;
+            cin>>gradLeve1;
+            cout<<"Please Enter Your Gpa:"<<endl;
+            cin>>gpa;
+            cout<<"The Student Is Add In School Successfully"<<endl;
+        }
+        virtual ~Student() {}
+
+    private:
+        int studentID;
+        string gradLeve1;
+        float gpa;
+};
+
+#endif // STUDENT_H
