@@ -1,0 +1,46 @@
+#ifndef CLASSROOM_H
+#define CLASSROOM_H
+#include <iostream>
+using namespace std;
+class Classroom
+{
+    private:
+        int roomNumber;
+        int capacity;
+    public:
+        void setRoomNumber(int roomNumber)
+        {
+          this->roomNumber=roomNumber;
+        }
+        void setCapacity(int capacity)
+        {
+            this->capacity=capacity;
+        }
+        int getRoomNumber()
+        {
+            return roomNumber;
+        }
+        int getCapacity()
+        {
+          return capacity;
+        }
+        void print()
+        {
+            cout<<"The Room Number is:"<<roomNumber<<endl;
+            cout<<"The Capacity is:"<<capacity<<endl;
+        }
+        void information()
+        {
+            cout<<"Please Enter Your Room Number:"<<endl;
+            cin>>roomNumber;
+            cout<<"Please Enter Your Capacity:"<<endl;
+            cin>>capacity;
+            cout<<"The Course Is Add In School Successfully"<<endl;
+        }
+        Classroom() {}
+        virtual ~Classroom() {}
+
+
+};
+
+#endif // CLASSROOM_H
