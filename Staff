@@ -1,0 +1,100 @@
+#ifndef STAFF_H
+#define STAFF_H
+#include<Person.h>
+#include <iostream>
+using namespace std;
+class Staff:public Person
+{
+    public:
+         Staff()
+    {
+        name = "";
+        age = 0;
+        gender = "";
+        address = "";
+        phoneNumber = "";
+        email = "";
+        staffID = 0;
+        role = "";
+        salary = 0.0;
+    }
+       void setStaffID(int staffID)
+       {
+           this-> staffID= staffID;
+       }
+       void setRole(string role)
+       {
+           this->role=role;
+       }
+       void setSalary(float salary)
+       {
+           this->salary=salary;
+       }
+       int getStaffID()
+       {
+           return staffID;
+       }
+       string getRole()
+       {
+           return role;
+       }
+       float getSalary()
+       {
+           return salary;
+       }
+       void print()
+       {
+        Person::print();
+         cout<<"The staff ID is:"<<staffID<<endl;
+         cout<<"The Role is :"<<role<<endl;
+         cout<<"The Salary is :"<<salary<<endl;
+       }
+       void information()
+        {
+
+            cout<<"Please Enter Your Name:"<<endl;
+            cin>>name;
+            cout<<"Please Enter Your Age:"<<endl;
+            cin>>age;
+            cout<<"Please Enter Your Gender:"<<endl;
+            cin>>gender;
+            cout<<"Please Enter Your Address:"<<endl;
+            cin>>address;
+            cout<<"Please Enter Your Phone Number:"<<endl;
+            cin>>phoneNumber;
+            cout<<"Please Enter Your Email:"<<endl;
+            cin>>email;
+            cout<<"Please Enter Your staff ID:"<<endl;
+            cin>>staffID;
+            cout<<"Please Enter Your Role:"<<endl;
+            cin>>role;
+            cout<<"Please Enter Your Salary:"<<endl;
+            cin>>salary;
+            cout<<"The Staff Is Add In School Successfully"<<endl;
+
+        }
+
+
+       Staff(string name,int age,string gender,string address,string phoneNumber,string email,
+              int staffID,string role,float salary)
+        {
+            this->name=name;
+            this->age=age;
+            this->gender=gender;
+            this->address=address;
+            this->phoneNumber=phoneNumber;
+            this->email=email;
+            this-> staffID= staffID;
+            this->role=role;
+            this->salary=salary;
+        }
+        virtual ~Staff() {}
+
+    protected:
+        int staffID;
+        string role;
+        float salary;
+
+};
+
+#endif // STAFF_H
